@@ -1,4 +1,4 @@
-.PHONY: help run-tag run-notice run-delete dry-tag dry-notice dry-delete build up down logs
+.PHONY: help run-tag run-notice run-delete dry-tag dry-notice dry-delete
 
 help:
 	@echo "Usage:"
@@ -8,10 +8,6 @@ help:
 	@echo "  make dry-tag      - タグ付与スクリプトをdry-run"
 	@echo "  make dry-notice   - 剪定通知スクリプトをdry-run"
 	@echo "  make dry-delete   - 剪定実行スクリプトをdry-run"
-	@echo "  make build        - Dockerイメージをビルド"
-	@echo "  make up           - コンテナを起動"
-	@echo "  make down         - コンテナを停止"
-	@echo "  make logs         - ログを表示"
 
 # 本番実行
 run-tag:
@@ -32,16 +28,3 @@ dry-notice:
 
 dry-delete:
 	uv run scripts/collab_deletion/exec.py --dry-run
-
-# Docker
-build:
-	docker compose build
-
-up:
-	docker compose up -d
-
-down:
-	docker compose down
-
-logs:
-	docker compose logs -f

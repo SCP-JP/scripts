@@ -46,35 +46,38 @@ SCP-JP / SCP-JP-Sandbox3 向けの自動ページ管理スクリプト群
 | rating <= -3 | タグ全削除 → `deleted:<category>:<name>-<random6>` にリネーム |
 | rating >= -2 | `合作記事剪定通知` タグのみ削除（回復） |
 
-## セットアップ
+## GitHub Actions
 
-### 1. 環境変数の設定
+スクリプトはGitHub Actionsで自動実行されます。
+
+| ワークフロー | スケジュール |
+|-------------|-------------|
+| tagging.yml | 10分ごと |
+| collab-notice.yml | 毎月1日 04:00 JST |
+| collab-exec.yml | 毎月4日 04:00 JST |
+
+### 必要なSecrets
+
+リポジトリのSettings → Secrets and variables → Actionsで設定:
+
+- `WIKIDOT_USERNAME`
+- `WIKIDOT_PASSWORD`
+- `DISCORD_WEBHOOK_URL`
+
+## ローカル実行
+
+### セットアップ
 
 ```bash
-cp .env.example .env
-```
-
-`.env` を編集:
-
-```env
-WIKIDOT_USERNAME=your_wikidot_username
-WIKIDOT_PASSWORD=your_wikidot_password
-DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/xxxx/yyyy
-```
-
-### 2. uvのインストール
-
-```bash
-# macOS/Linux
+# uvのインストール
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Windows
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+# 環境変数の設定
+cp .env.example .env
+# .envを編集
 ```
 
-## 使い方
-
-### ローカル実行
+### 実行
 
 ```bash
 # Dry-run（変更せずに対象を確認）
@@ -88,31 +91,14 @@ make run-notice
 make run-delete
 ```
 
-### Docker実行
-
-```bash
-make build   # イメージビルド
-make up      # コンテナ起動（cron自動実行）
-make down    # コンテナ停止
-make logs    # ログ確認
-```
-
-## Cronスケジュール
-
-| スクリプト | スケジュール |
-|-----------|-------------|
-| new_page/tagging.py | 10分ごと |
-| collab_deletion/notice.py | 毎月1日 04:00 JST |
-| collab_deletion/exec.py | 毎月4日 04:00 JST |
-
 ## 通知
 
 各スクリプト実行完了時にDiscord webhookで結果を通知します。
 
 | 色 | 意味 |
 |----|------|
-| 緑 | 処理なし（全てスキップ） |
-| 黄 | 処理あり |
+| 緑 | 正常終了 |
+| 黄 | 削除処理あり |
 | 赤 | エラー発生 |
 
 ## 技術仕様
@@ -120,7 +106,7 @@ make logs    # ログ確認
 - Python 3.11+
 - [wikidot.py](https://github.com/ukwhatn/wikidot.py) v4.x
 - PEP 723 形式の uv script（単一ファイル実行）
-- Docker + cron による定期実行
+- GitHub Actions による定期実行
 
 ## ライセンス
 

@@ -1,0 +1,22 @@
+name: New Page Tagging
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"  # 10分ごと
+  workflow_dispatch:  # 手動実行用
+
+jobs:
+  tagging:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Run tagging script
+        env:
+          WIKIDOT_USERNAME: ${{ secrets.WIKIDOT_USERNAME }}
+          WIKIDOT_PASSWORD: ${{ secrets.WIKIDOT_PASSWORD }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: uv run scripts/new_page/tagging.py
