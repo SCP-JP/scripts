@@ -52,7 +52,7 @@ SCP-JP / SCP-JP-Sandbox3 向けの自動ページ管理スクリプト群
 
 | ワークフロー | スケジュール |
 |-------------|-------------|
-| tagging.yml | 10分ごと |
+| tagging.yml | 毎日 04:00 JST |
 | collab-notice.yml | 毎月1日 09:00 JST |
 | collab-exec.yml | 毎月4日 09:00 JST |
 

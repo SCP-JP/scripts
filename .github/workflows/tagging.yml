@@ -2,7 +2,7 @@ name: New Page Tagging
 
 on:
   schedule:
-    - cron: "*/10 * * * *"  # 10分ごと
+    - cron: "0 19 * * *"  # 毎日 04:00 JST
   workflow_dispatch:  # 手動実行用
 
 jobs:
