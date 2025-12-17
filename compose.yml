@@ -1,0 +1,11 @@
+services:
+  scp-jp-scripts:
+    build: .
+    container_name: scp-jp-scripts
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/var/log/scp-jp-scripts
+    environment:
+      - TZ=Asia/Tokyo
