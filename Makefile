@@ -11,7 +11,7 @@ help:
 
 # 本番実行
 run-tag:
-	uv run scripts/new_page/tagging.py
+	uv run scripts/tool/new_page_tagging.py
 
 run-notice:
 	uv run scripts/collab_deletion/notice.py
@@ -21,7 +21,7 @@ run-delete:
 
 # Dry-run
 dry-tag:
-	uv run scripts/new_page/tagging.py --dry-run
+	uv run scripts/tool/new_page_tagging.py --dry-run
 
 dry-notice:
 	uv run scripts/collab_deletion/notice.py --dry-run

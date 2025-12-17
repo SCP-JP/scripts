@@ -212,7 +212,7 @@ def main():
     if total_processed > 0 or total_errors > 0:
         send_discord_notification(
             webhook_url=webhook_url,
-            title="new_page/tagging 完了",
+            title="tool/tagging 完了",
             description=f"実行日時: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
             fields=fields,
             color=color,

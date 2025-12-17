@@ -19,4 +19,4 @@ jobs:
           WIKIDOT_USERNAME: ${{ secrets.WIKIDOT_USERNAME }}
           WIKIDOT_PASSWORD: ${{ secrets.WIKIDOT_PASSWORD }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: uv run scripts/new_page/tagging.py
+        run: uv run scripts/tool/new_page_tagging.py
