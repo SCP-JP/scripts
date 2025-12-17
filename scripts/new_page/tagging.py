@@ -64,7 +64,7 @@ def send_discord_notification(
         response = requests.post(webhook_url, json={"embeds": [embed]}, timeout=10)
         return 200 <= response.status_code < 300
     except requests.RequestException as e:
-        logger.error(f"Error sending Discord notification: {e}")
+        logger.exception(f"Error sending Discord notification: {e}")
         return False
 
 
@@ -115,7 +115,7 @@ def task1_collab_tagging(client: wikidot.Client, dry_run: bool = False) -> dict:
                 add_tags_to_page(page, tags_to_add, dry_run)
                 results["processed"].append(page.fullname)
             except Exception as e:
-                logger.error(f"Error processing page {page.fullname}: {e}")
+                logger.exception(f"Error processing page {page.fullname}: {e}")
                 results["errors"].append({"page": page.fullname, "error": str(e)})
 
         # 剪定対象-子タグがないページを検索（jpタグはあるがこちらがない場合）
@@ -129,7 +129,7 @@ def task1_collab_tagging(client: wikidot.Client, dry_run: bool = False) -> dict:
                 add_tags_to_page(page, ["剪定対象-子"], dry_run)
                 results["processed"].append(page.fullname)
             except Exception as e:
-                logger.error(f"Error processing page {page.fullname}: {e}")
+                logger.exception(f"Error processing page {page.fullname}: {e}")
                 results["errors"].append({"page": page.fullname, "error": str(e)})
 
     return results
@@ -157,7 +157,7 @@ def task2_sb3_portal_tagging(client: wikidot.Client, dry_run: bool = False) -> d
             add_tags_to_page(page, [initial_tag], dry_run)
             results["processed"].append(page.fullname)
         except Exception as e:
-            logger.error(f"Error processing page {page.fullname}: {e}")
+            logger.exception(f"Error processing page {page.fullname}: {e}")
             results["errors"].append({"page": page.fullname, "error": str(e)})
 
     return results

@@ -68,7 +68,7 @@ def main():
                     "removed_tags": initial_tags_on_page,
                 })
             except Exception as e:
-                logger.error(f"Error processing page {page.fullname}: {e}")
+                logger.exception(f"Error processing page {page.fullname}: {e}")
                 results["errors"].append({"page": page.fullname, "error": str(e)})
 
     logger.info("=== SUMMARY ===")

@@ -67,7 +67,7 @@ def send_discord_notification(
         response = requests.post(webhook_url, json={"embeds": [embed]}, timeout=10)
         return 200 <= response.status_code < 300
     except requests.RequestException as e:
-        logger.error(f"Error sending Discord notification: {e}")
+        logger.exception(f"Error sending Discord notification: {e}")
         return False
 
 
@@ -114,7 +114,7 @@ def post_forum_delete_notice(
             return {"posted": True, "title": title, "replied_to": None}
 
     except Exception as e:
-        logger.error(f"Error posting forum notice: {e}")
+        logger.exception(f"Error posting forum notice: {e}")
         return {"posted": False, "error": str(e)}
 
 
@@ -186,7 +186,7 @@ def main():
                     )
 
             except Exception as e:
-                logger.error(f"Error processing page {page.fullname}: {e}")
+                logger.exception(f"Error processing page {page.fullname}: {e}")
                 results["errors"].append({"page": page.fullname, "error": str(e)})
 
         # フォーラム投稿（削除または回復処理があった場合）
