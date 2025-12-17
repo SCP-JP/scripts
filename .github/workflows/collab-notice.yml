@@ -1,4 +1,4 @@
-name: Collab Deletion Notice
+name: "[剪定対象合作]削除通知 (毎月1日 09:00)"
 
 on:
   schedule:

@@ -1,4 +1,4 @@
-name: Collab Deletion Exec
+name: "[剪定対象合作]削除実行 (毎月4日 09:00)"
 
 on:
   schedule:

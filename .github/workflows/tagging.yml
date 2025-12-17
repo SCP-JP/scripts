@@ -1,4 +1,4 @@
-name: New Page Tagging
+name: "[ツール]新ページタグ付与 (毎日 04:00)"
 
 on:
   schedule:
