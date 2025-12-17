@@ -2,7 +2,7 @@ name: Collab Deletion Exec
 
 on:
   schedule:
-    - cron: "0 19 4 * *"  # 毎月4日 04:00 JST (19:00 UTC前日)
+    - cron: "0 0 4 * *"  # 毎月4日 09:00 JST
   workflow_dispatch:  # 手動実行用
 
 jobs:
