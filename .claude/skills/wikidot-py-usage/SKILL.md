@@ -25,7 +25,7 @@ gh api repos/ukwhatn/wikidot.py/contents/llms.txt --jq '.content' | base64 -d
 `uv run` で venv にインストール済の場合:
 
 ```bash
-ls /Users/ukwhatn/workspace/scp/scripts/.venv/lib/python3.12/site-packages/wikidot/module/
+ls /Users/ukwhatn/workspace/scp/ops/scripts/.venv/lib/python3.12/site-packages/wikidot/module/
 # page.py, site.py, forum_*.py, ...
 ```
 
