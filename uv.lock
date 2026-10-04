@@ -207,14 +207,14 @@ wheels = [
 
 [[package]]
 name = "wikidot"
-version = "4.6.0"
+version = "4.6.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "beautifulsoup4" },
     { name = "httpx" },
     { name = "lxml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/03/f8/c8f43f9ca8765d068ef2c8b2c44e033a1e30382691b59ad180633342c84c/wikidot-4.6.0.tar.gz", hash = "sha256:df7953a10f190585da1573a9ffbc411c9abd5e6eee2898f132591d9a72f69b2e", size = 343400, upload-time = "2026-09-28T12:37:49.866Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0a/6f/bc1c779e407d317a1cf0fd2dff0e30de9f27063fca68d93b5ab6298e8717/wikidot-4.6.1.tar.gz", hash = "sha256:8a72486e28ae3467817c9101cd562114e31eb06c884e4c253cebc6042241d751", size = 343687, upload-time = "2026-10-04T12:00:38.454Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/31/06/e2521869c25bdd7d002165f73f357dd5e2bcaa2fb67e771ff751aaa3011f/wikidot-4.6.0-py3-none-any.whl", hash = "sha256:02c6b23b28cea674c63118b115338f0f2e9c318d7667d328129ba7f85aa78480", size = 149208, upload-time = "2026-09-28T12:37:48.298Z" },
+    { url = "https://files.pythonhosted.org/packages/95/27/857670545a1bcee3bd63c8fabf60c601cdd4f4086b68c5e1cf2660bd3b77/wikidot-4.6.1-py3-none-any.whl", hash = "sha256:7f371c4d22129827c55e850d8f4d6e6efe3b64fb7bf7460dbe2a97156db5ff36", size = 149361, upload-time = "2026-10-04T12:00:36.842Z" },
 ]
