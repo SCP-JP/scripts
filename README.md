@@ -4,7 +4,9 @@ SCP-JP / SCP-JP-Sandbox3 向けの自動ページ管理スクリプト群
 
 ## 処理対象
 
-### 1. new_page/tagging.py
+### 1. tool/new_page_tagging.py（停止中）
+
+2026-10-11 から panopticon の `new_page_tagging`（apps/sync。毎時40分）が同じ処理を行う。workflow は消さずに disable にしてある。
 
 **タスク1: 剪定対象合作へのタグ付与**
 
@@ -56,7 +58,7 @@ SCP-JP / SCP-JP-Sandbox3 向けの自動ページ管理スクリプト群
 
 | ワークフロー | スケジュール |
 |-------------|-------------|
-| tagging.yml | 毎日 04:00 JST |
+| tool-new_page_tagging.yml | 毎日 04:00 JST（disable 中） |
 | collab_deletion-notice.yml | 毎月1日 09:00 JST（disable 中） |
 | collab_deletion-exec.yml | 毎月4日 09:00 JST（disable 中） |
 
