@@ -24,7 +24,9 @@ SCP-JP / SCP-JP-Sandbox3 向けの自動ページ管理スクリプト群
 | 条件 | `initial_*` タグがないページ、`非使用ユーザー` タグなし |
 | 追加タグ | `initial_X` (Xは作成者unix_nameの頭1文字、a-z/0-9以外は`null`、作成者不明は`非使用ユーザー`) |
 
-### 2. collab_deletion/notice.py
+### 2. collab_deletion/notice.py（停止中）
+
+2026-10-11 から panopticon の `collab_pruning`（apps/sync）が同じ処理を行う。workflow は消さずに disable にしてある。
 
 **タスク: 低評価剪定対象合作への削除通知**
 
@@ -35,7 +37,9 @@ SCP-JP / SCP-JP-Sandbox3 向けの自動ページ管理スクリプト群
 | 条件 | rating <= -3 かつ `合作記事剪定通知` タグなし |
 | 追加タグ | `合作記事剪定通知` |
 
-### 3. collab_deletion/exec.py
+### 3. collab_deletion/exec.py（停止中）
+
+2026-10-11 から panopticon の `collab_pruning`（apps/sync）が同じ処理を行う。workflow は消さずに disable にしてある。
 
 **タスク: 剪定通知済みページの処理**
 
@@ -53,8 +57,8 @@ SCP-JP / SCP-JP-Sandbox3 向けの自動ページ管理スクリプト群
 | ワークフロー | スケジュール |
 |-------------|-------------|
 | tagging.yml | 毎日 04:00 JST |
-| collab-notice.yml | 毎月1日 09:00 JST |
-| collab-exec.yml | 毎月4日 09:00 JST |
+| collab_deletion-notice.yml | 毎月1日 09:00 JST（disable 中） |
+| collab_deletion-exec.yml | 毎月4日 09:00 JST（disable 中） |
 
 ### 必要なSecrets
 
