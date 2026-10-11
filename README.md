@@ -61,6 +61,7 @@ SCP-JP / SCP-JP-Sandbox3 向けの自動ページ管理スクリプト群
 | tool-new_page_tagging.yml | 毎日 04:00 JST（disable 中） |
 | collab_deletion-notice.yml | 毎月1日 09:00 JST（disable 中） |
 | collab_deletion-exec.yml | 毎月4日 09:00 JST（disable 中） |
+| monitor-workflow-health.yml | 毎週月曜 09:00 JST（disable 中。監視する定期 workflow が無くなったため） |
 
 ### 必要なSecrets
 
