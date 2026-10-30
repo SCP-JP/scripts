@@ -167,6 +167,10 @@ set_tags_via_amc(site, page_id, new_tags)
 
 ページ作成・編集・削除を行うスクリプトは `--dry-run` を必ず実装し、機能追加後の最初の実行は必ず dry-run で確認する。本番投入は dry-run の出力をユーザーが確認してから。
 
+## 7. 本番での作成・削除はフォーラムに報告する
+
+scp-jp 本サイトでページを作成・削除したら、フォーラムの「報告」カテゴリ（https://scp-jp.wikidot.com/forum/c-790923/ ）の該当スレッドに報告する。スレッドの選び方と書き方は `~/workspace/scp/CLAUDE.md` の「scp-jp でページを作成・削除したときの報告」に従う。スクリプトで複数ページを作ったときは、1件の新規ポストに URL を並べる。
+
 ## 参照
 
 - llms.txt: https://github.com/ukwhatn/wikidot.py/blob/main/llms.txt

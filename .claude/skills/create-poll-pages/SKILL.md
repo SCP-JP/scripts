@@ -83,6 +83,7 @@ ITEMS = [
 4. **テスト時のページは pseudo-scp-jp で残してよい** (再テスト時は同じ prefix なら `exists` パスで page_id 取得→タグ再セット)
 5. **本番 (scp-jp) 実行**: `uv run scripts/temp/create_poll_pages.py`
 6. **stdout のリスト形式をユーザーへコードブロックで提示**
+7. **作成報告**: 作った poll ページの URL を並べた報告文を作り、承認を得てから「記事作成報告用スレッド:その他」の今年の vol に新規ポストする（`wikidot-py-usage` スキルの「本番での作成・削除はフォーラムに報告する」）。pseudo-scp-jp のテストは対象外
 
 ## 5. 注意事項
 
